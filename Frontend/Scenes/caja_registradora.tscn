@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciohuvhr54ijk"]
+[gd_scene load_steps=8 format=3 uid="uid://ciohuvhr54ijk"]
 
 [ext_resource type="Script" uid="uid://4o0pgcyusbrv" path="res://scripts/caja_registradora.gd" id="1_e2esv"]
 [ext_resource type="PackedScene" uid="uid://uj1k53wnnwjq" path="res://Textures/Kit_Minimarket/cash-register.glb" id="2_yimre"]
+[ext_resource type="AudioStream" uid="uid://mur3mdrcgsma" path="res://Audios/money-soundfx.mp3" id="3_fr6mc"]
+[ext_resource type="AudioStream" uid="uid://b6jxqeb21deb1" path="res://Audios/error_CDOxCYm.mp3" id="4_781gq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_euks1"]
 size = Vector3(1, 0.66986084, 1)
@@ -33,3 +35,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20000005, 0.12615967, 0)
 shape = SubResource("BoxShape3D_fr6mc")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="SonidoCaja" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fr6mc")
+volume_db = -12.0
+
+[node name="SonidoError" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_781gq")
+volume_db = -12.0

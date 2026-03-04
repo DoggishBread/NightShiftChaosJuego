@@ -1,11 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://ciidfnkx3pt0q"]
+[gd_scene load_steps=24 format=3 uid="uid://ciidfnkx3pt0q"]
 
 [ext_resource type="PackedScene" uid="uid://dpm7j4jk1bqc2" path="res://Scenes/player.tscn" id="3_cegan"]
 [ext_resource type="Script" uid="uid://mbmt7bfef5nf" path="res://scripts/game_manager.gd" id="3_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://ciohuvhr54ijk" path="res://Scenes/caja_registradora.tscn" id="4_82xsv"]
-[ext_resource type="AudioStream" uid="uid://mur3mdrcgsma" path="res://Audios/money-soundfx.mp3" id="4_k12tt"]
 [ext_resource type="Script" uid="uid://cohc7yypl8313" path="res://scripts/node.gd" id="5_getpj"]
-[ext_resource type="AudioStream" uid="uid://b6jxqeb21deb1" path="res://Audios/error_CDOxCYm.mp3" id="5_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://c2em3ix3p1ldc" path="res://Textures/Kit_Minimarket/wall-corner.glb" id="6_ryguw"]
 [ext_resource type="PackedScene" uid="uid://dko1wuci4cvkx" path="res://Scenes/shelf_end.tscn" id="6_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://dy4fy3xb3ov3v" path="res://Textures/Kit_Minimarket/wall.glb" id="7_d13ii"]
@@ -30,8 +28,8 @@ background_mode = 2
 sky = SubResource("Sky_wlxy5")
 tonemap_mode = 2
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_vvmd2"]
-vertices = PackedVector3Array(-2.0500002, 0.45, -3.3000002, -1.8000002, 0.45, -1.5500002, -1.5500002, 0.45, -3.0500002, -3.5500002, 0.45, -4.05, -4.05, 0.45, -3.5500002, -4.05, 0.45, -3.0500002, 3.1999998, 0.45, -3.0500002, 4.2, 0.45, -2.8000002, 4.2, 0.45, -4.05, 0.6999998, 0.45, -1.5500002, 0.9499998, 0.45, -1.5500002, 0.9499998, 0.45, -3.0500002, 0.4499998, 0.45, -3.3000002, -0.05000019, 0.45, -1.3000002, -0.3000002, 0.45, 1.1999998, 3.6999998, 0.45, 0.9499998, 2.9499998, 0.45, -1.3000002, 3.9499998, 0.45, 2.6999998, -4.05, 0.45, 2.6999998, -4.05, 0.45, 3.9499998, 4.2, 0.45, 3.9499998, -2.5500002, 1.7, -0.5500002, -2.5500002, 1.7, -0.05000019, -1.0500002, 1.7, -0.05000019, -1.0500002, 1.7, -0.5500002)
+[sub_resource type="NavigationMesh" id="NavigationMesh_wsu2k"]
+vertices = PackedVector3Array(-2.0500002, 0.44, -3.3000002, -1.8000002, 0.44, -1.5500002, -1.5500002, 0.44, -3.0500002, -3.5500002, 0.44, -4.05, -4.05, 0.44, -3.5500002, -4.05, 0.44, -3.0500002, 3.1999998, 0.44, -3.0500002, 4.2, 0.44, -2.8000002, 4.2, 0.44, -4.05, 0.6999998, 0.44, -1.5500002, 0.9499998, 0.44, -1.5500002, 0.9499998, 0.44, -3.0500002, 0.4499998, 0.44, -3.3000002, -0.05000019, 0.44, -1.3000002, -0.3000002, 0.44, 1.1999998, 3.6999998, 0.44, 0.9499998, 2.9499998, 0.44, -1.3000002, 3.9499998, 0.44, 2.6999998, -4.05, 0.44, 2.6999998, -4.05, 0.44, 3.9499998, 4.2, 0.44, 3.9499998, -2.5500002, 1.69, -0.5500002, -2.5500002, 1.69, -0.05000019, -1.0500002, 1.69, -0.05000019, -1.0500002, 1.69, -0.5500002)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 0), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(0, 3, 12), PackedInt32Array(12, 3, 8), PackedInt32Array(11, 12, 6), PackedInt32Array(6, 12, 8), PackedInt32Array(0, 12, 2), PackedInt32Array(9, 10, 13), PackedInt32Array(13, 10, 16), PackedInt32Array(13, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(6, 7, 16), PackedInt32Array(16, 7, 15), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(17, 15, 20), PackedInt32Array(20, 15, 7), PackedInt32Array(24, 23, 21), PackedInt32Array(21, 23, 22)]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vvmd2"]
@@ -81,18 +79,11 @@ offset_bottom = 48.0
 [node name="game_manager" type="Node" parent="."]
 script = ExtResource("3_jkdf5")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="game_manager"]
-
-[node name="SonidoCaja" type="AudioStreamPlayer" parent="game_manager"]
-stream = ExtResource("4_k12tt")
-volume_db = -12.0
-
-[node name="SonidoError" type="AudioStreamPlayer" parent="game_manager"]
-stream = ExtResource("5_h1bgf")
-volume_db = -12.0
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_vvmd2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.034475096, 0)
+navigation_mesh = SubResource("NavigationMesh_wsu2k")
+use_edge_connections = false
+travel_cost = 2.0
 
 [node name="Escenario" type="Node" parent="NavigationRegion3D"]
 
@@ -360,7 +351,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
 wait_time = 6.0
 autostart = true
 
-[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="Extras"]
 stream = ExtResource("17_h1bgf")
 volume_db = -11.45
 autoplay = true
